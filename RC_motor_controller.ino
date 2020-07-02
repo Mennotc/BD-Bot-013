@@ -1,3 +1,11 @@
+/*
+  This piece of code is based on the Aruino UNO and 2 Cytron MD10C motor controllers.
+  Using a standard RC transmitter and reciever the UNO is able to control a twin motor
+  setup in a model boat using 2 channels.
+  One channel controls the speed of the boat and the other the direction of travel
+  Steering is done by decreasing power to one of the motors and maintaining the speed setting to the other motor.
+*/
+
 // Controller pins
 const int CH_1_PIN = 6; // Speed and forward-reverse
 const int CH_2_PIN = 5; // Steering
