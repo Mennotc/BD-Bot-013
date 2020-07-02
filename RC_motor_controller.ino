@@ -52,7 +52,7 @@ void loop() {
     ch2 = 0;
   }
 
-  // Determine power to motors
+  // Determine power to motors to be able to change direction
   // Steering is done by decreasing the power on 1 motor. This is done by applying a factor, calculated in this section
   f = 1 - (abs(ch2) / 255);
   if (f < 0.1) {
@@ -72,7 +72,7 @@ void loop() {
     pwmLM = abs(ch1);
   }
 
-  // The direction is set. Reverse for values < 0
+  // The direction is set in this part. Reverse for values < 0
   if (ch1 < 0) {
     dir = LOW;
   }
@@ -86,19 +86,19 @@ void loop() {
   digitalWrite(DIR_RM, dir);
   analogWrite(PWM_RM, pwmRM);
 
-  // just print output to check
-  Serial.print("Channel 1: ");
-  Serial.print(ch1);
-  Serial.print("  Channel 2: ");
-  Serial.print(ch2);
-  Serial.print("  factor: ");
-  Serial.print(f);
-  Serial.print("  Left motorspeed ");
-  Serial.print(pwmLM);
-  Serial.print("  Right motorspeed ");
-  Serial.print(pwmRM);
-  Serial.print("  Direction ");
-  Serial.println(dir);
+//  Print output to check calculations
+//  Serial.print("Channel 1: ");
+//  Serial.print(ch1);
+//  Serial.print("  Channel 2: ");
+//  Serial.print(ch2);
+//  Serial.print("  factor: ");
+//  Serial.print(f);
+//  Serial.print("  Left motorspeed ");
+//  Serial.print(pwmLM);
+//  Serial.print("  Right motorspeed ");
+//  Serial.print(pwmRM);
+//  Serial.print("  Direction ");
+//  Serial.println(dir);
 }
 
 void setPwmFrequency(int pin, int divisor) {
